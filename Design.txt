@@ -1,0 +1,6 @@
+1-	Copy /sys/fs/nullfs/Makefile to /sys/modules/cryptofs after that rename all variables inside Makefile from nullfs to cryptofs
+2-	Create new file inside /sys/fs/ named cryptofs
+3-	After renaming the files of the copied nullfs file . We renamed each struct and variables inside those files to cryptofs
+4-	Build and install Mount_cryptofs 
+
+5-	To ensure the user is reading from encrypted file and writing  in encrypted file.  We added crypto_write and crypto_read in /sys/fs/crypto_vnop.c file under struct vop_vector crypto_vnodeops . At the beginning , we set them with NULL as advised to make sure their added and work using the crypto file system.
